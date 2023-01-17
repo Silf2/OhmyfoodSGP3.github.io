@@ -1,0 +1,187 @@
+*{
+    font-family: 'roboto', sans-serif;
+    margin:0;
+    text-decoration: none;
+}
+
+p{
+    font-weight: 200;
+}
+
+
+/*header*/
+.bouton_precedent{
+    color: black;
+    position: absolute;
+    font-size: 125%;
+    padding-top: 2%;
+    padding-left: 5%;
+}
+
+.header_logo{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2%;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.img_logo{
+    width: 30%;
+    padding-top: 2%;
+}
+/*fin header*/
+
+
+/*section image d'illustration*/
+.img_restaurant{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+/*fin section image d'illustration*/
+
+
+/*main*/
+
+
+/*section menus*/
+
+.menus{
+    padding: 5%;
+    background-color:#F7F7F7;
+    position: relative;
+    z-index: 1;
+    margin-top: -10%;
+    border-radius: 25px 25px 0 0;
+}
+
+/*entete_menus*/
+.entete_menus{
+    display: flex;
+    align-items: center;
+}
+
+.nom_restaurant{
+    font-family: Shrikhand;
+    font-size: 175%;
+}
+
+.like_vide{
+    font-size: 30px;
+    position: absolute;
+    padding-left: 85%;
+}
+
+.like_vide:hover{
+    visibility: hidden;
+}
+
+.like_plein{
+    visibility: hidden;
+    position: absolute;
+    padding-left: 85%;
+    background: linear-gradient(#9356DC, #FF79DA);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
+    margin-left: -53%;
+}
+
+.like_plein:hover{
+    visibility: visible;
+}
+/*fin entete menus*/
+
+
+/*section entrées plats et desserts*/
+.boite_categorie{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.nom_catégorie{
+    font-weight: 200;
+    padding-bottom: 2%;
+    border-bottom: 2px solid #00a77e;
+    position: absolute;
+    margin-top: -2%;
+    font-size: 100%;
+    left: 5%;
+    right: 88%;
+}
+
+.carte_plat{
+    display: flex;
+    background-color:#F7F7F7;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    width: 100%;
+    margin-top: 2%;
+}
+
+.text_plat{
+    padding: 2%;
+}
+
+.complement_et_prix{
+    display: flex;
+    text-align: center;
+}
+
+.prix{
+    position: absolute;
+    padding-left: 80%;
+}
+/*fin section entrée/plats/desserts*/
+
+/*section commander*/
+
+#bouton{
+    border-radius: 20px;
+    border: 0;
+    width: 60%;
+    font-size: 150%;
+    padding: 1.2%;
+    color: white;
+    background: linear-gradient(#FF79DA, #9356DC);
+    cursor: pointer;
+}
+
+.position_bouton{
+    display: flex;
+    justify-content: center;
+    padding: 10% 0 5% 0;
+}
+/*fin section commander*/
+
+/*footer*/
+footer{
+    background-color: #353535;
+    padding: 5%;
+}
+
+.img_logo_footer{
+    filter: brightness(17);
+    width: 25%;
+    padding-bottom: 3%;
+}
+
+.text_footer{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    line-height: 150%;
+}
+
+.text_picto_foot{
+    display: flex;
+    text-align: center;
+}
+
+.picto_foot{
+    color: white;
+    font-size: 85%;
+    padding-right: 2%;
+}
+/*fin footer*/

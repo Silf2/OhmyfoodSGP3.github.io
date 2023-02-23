@@ -351,6 +351,7 @@ footer{
 
     .conteneur_carte_plat{
         display: flex;
+        justify-content: space-between;
     }
 
     .picto_check{

@@ -17,13 +17,88 @@ p{
 }
 
 .img_logo{
-    width: 30%;
+    width: 50%;
     padding-top: 2%;
 }
 /*fin header*/
 
 /*main*/
 
+/*loading spinner*/
+.background_loader{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    backdrop-filter: blur(10px);
+    animation: disparition 3s;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+}
+.loader {
+    color: #FF79DA;
+    font-size: 20px;
+    margin: 100px auto;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: relative;
+    text-indent: -9999em;
+    -webkit-animation: load4 1.3s infinite linear;
+    animation: load4 1.3s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    position:fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+}
+
+  @keyframes disparition {
+    from{
+        opacity: 1;
+    }
+    
+    to{
+        opacity: 0;
+        display: none;
+        z-index: -1;
+    }
+  }
+
+  @keyframes load4 {
+    0%,
+    100% {
+      box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+      box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+      box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+      box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+      box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+  }
+  /*fin loading spinner*/
 
 /*Section Localisation*/
 .bande_localisation{
@@ -35,15 +110,14 @@ p{
 
 .marqueur{
     margin-top: 0;
-    font-size: 75%;
     color: #575757;
     position: absolute;
-    padding-right: 25%;
+    padding-right: 35%;
 }
 
 .localisation{
     margin-top: 0;
-    font-size: 75%;
+    font-size: 100%;
     color: #575757;
     padding: 2% 0 2% 0;
 }
@@ -58,7 +132,7 @@ p{
 .text_reservation{
     display: flex;
     justify-content: center;
-    padding: 5% 20% 0 20%;
+    padding: 5% 20% 2% 20%;
     text-align: center;
 }
 
@@ -78,11 +152,17 @@ p{
 #bouton{
     border-radius: 15px;
     border: 0;
-    width: 30%;
+    width: 45%;
     padding: 1.2%;
     color: white;
     background: linear-gradient(#FF79DA, #9356DC);
     cursor: pointer;
+    transform: scale(1);
+    transition: transform 400ms;
+}
+
+#bouton:hover{
+    transform: scale(1.15);
 }
 /*Fin section exploration restaurant*/
 
@@ -98,7 +178,7 @@ p{
     flex-direction: column;
 }
 
-.carte_fonctionnement{
+.carte_fonctionnement, #carte_fonctionnement_centrale{
     display: flex;
     background-color:#F7F7F7;
     border-radius: 15px;
@@ -108,7 +188,7 @@ p{
     margin-bottom: 2%;
 }
 
-.carte_fonctionnement:hover{
+.carte_fonctionnement:hover, #carte_fonctionnement_centrale:hover{
     background-color: #9356DC24;
     color:#9356DC;
 }
@@ -131,13 +211,17 @@ p{
     transition: color 0.3s;
 }
 
-.picto_fonctionnement:hover{
+.carte_fonctionnement:hover .picto_fonctionnement{
     color:#9356DC;
+}
+
+#carte_fonctionnement_centrale:hover .picto_fonctionnement{
+    color: #9356DC;
 }
 
 .text_fonctionnement{
     padding: 2%;
-    justify-content:center;
+    font-size: 100%;
     color:black;
 }
 /*fin section fonctionnement*/
@@ -166,14 +250,18 @@ p{
     text-align: center;
     padding: 5px 3px 3px 5px;
     border-radius: 3px;
-    font-size: 15px;
+    font-size: 65%;
     color: #00a77e;
     margin: 2% 0 0 75%;
 }
 
+.conteneur_img{
+    margin-bottom: -1%;
+}
+
 .img_restaurant{
     width: 100%;
-    height: 250px;
+    height: 150px;
     object-fit: cover;
     border-radius: 15px 15px 0 0;
 }
@@ -184,6 +272,8 @@ p{
     padding: 3% 0 3% 2%;
     border-radius: 0 0 15px 15px;
     align-items: center;
+    justify-content: space-between;
+    font-size: 80%;
 }
 
 .text_restaurant{
@@ -194,33 +284,36 @@ p{
     padding-bottom: 1%;
 }
 
-.like{
-    color: black;
-    position: absolute;
-    margin-left: 75%;
+.fa-heart::before {
+    background: black;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 25px;
+    position: relative;
+    right: 50%;
 }
 
-.like_vide{
-    font-size: 30px;
-}
-
-.like_vide:hover{
-    visibility: hidden;
-}
-
-.like_plein{
-    visibility: hidden;
+.fa-heart::after{
+    content: "\f004";
     background: linear-gradient(#9356DC, #FF79DA);
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 30px;
-    margin-left: -53%;
+    cursor: pointer;
+    font-weight: bold;
+    height: 0%;
+    right: 8.35%;
+    font-size: 25px;
+    position: absolute;
+    transition: all 2s;
 }
 
-.like_plein:hover{
+.fa-heart:hover::after {
+    height: 10%;
     visibility: visible;
 }
+
 /*fin section restaurant*/
 /*Fin main*/
 
@@ -233,7 +326,7 @@ footer{
 
 .img_logo_footer{
     filter: brightness(17);
-    width: 25%;
+    width: 50%;
     padding-bottom: 3%;
 }
 
@@ -255,3 +348,277 @@ footer{
     padding-right: 2%;
 }
 /*fin footer*/
+
+/*disposition desktop*/
+@media screen and (min-width:992px){
+
+    /*header*/ 
+    .img_logo{
+        width: 40%;
+    }
+
+    /*main*/
+
+    .loader{
+        font-size: 400%;
+        margin-top: 20%;
+    }
+
+    /*bande localisation*/
+    .marqueur{
+        font-size: 200%;
+    }
+    
+    .localisation{
+        font-size: 200%;
+    }
+    /*fin bande localisation*/
+
+    /*section exploration*/
+    .exploration_restaurant{
+        margin: 5% 20% 0 20%;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+
+    .text_reservation{
+        font-size: 250%;
+        padding: 5% 10% 0 10%;
+    }
+
+    .text_decouvration{
+        font-size: 200%;
+        padding: 0 15% 0 15%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    #bouton{
+        border-radius: 40px;
+        width: 40%;
+        font-size: 200%;
+        margin-bottom: -2.5%;
+    }
+
+    .position_bouton{
+        padding-bottom: 0;
+    }
+    /*fin section exploration*/
+
+    /*section fonctionnement*/
+    .titre_categorie{
+        font-size: 250%;
+        text-align: center;
+    }
+
+    .ensemble_carte_fonctionnement{
+        flex-direction: row;
+        margin-top: 5%;
+    }
+
+    #carte_fonctionnement_centrale{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .picto_fonctionnement{
+        font-size: 160%;
+        padding-left: 0;
+    }
+
+    .text_fonctionnement{
+        padding: 0;
+        font-size: 160%;
+    }
+
+    .numerotation{
+        width: 25px;
+        height: 25px;
+        font-size: 135%;
+    }
+    /*fin section fonctionnement*/
+
+    /*section restaurants*/
+
+    .conteneur_carte_restaurant{
+        display: flex;
+    }
+
+    .img_restaurant{
+        height: 300px;
+    }
+    .card_restaurant{
+        width: 50%;
+        margin: 1%;
+    }
+
+    .fa-heart::before{
+        font-size: 40px;
+    }
+
+    .fa-heart::after{
+        font-size: 40px;
+        right: unset;
+        margin-left: -3.15%;
+    }
+
+    .nouveauté{
+        margin-left: 37%;
+        font-size: 100%;
+    }
+
+    .text_restaurant{
+        font-size: 150%;
+    }
+
+    .like{
+        margin-left: 40%;
+    }
+
+    .footer_card{
+        font-size: 100%;
+    }
+    /*fin section restaurants*/
+    /*fin main*/
+
+    /*footer*/
+    .img_logo_footer{
+        display: flex;
+        margin: auto;
+        width: 35%;
+    }
+
+    .text_footer{
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 200%;
+    }
+
+    .text_picto_foot{
+        text-align: unset;
+    }
+    /*fin footer*/
+}
+
+/*disposition tablette*/
+@media screen and (min-width:768px) and (max-width:992px){
+
+        /*main*/
+
+        .loader{
+            font-size: 300%;
+            margin-top: 20%;
+        }
+    
+        /*bande localisation*/
+        .marqueur{
+            font-size: 150%;
+        }
+        
+        .localisation{
+            font-size: 150%;
+        }
+        /*fin bande localisation*/
+    
+        /*section exploration*/
+        .exploration_restaurant{
+            margin: 5% 20% 0 20%;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+    
+        .text_reservation{
+            font-size: 200%;
+            padding: 5% 10% 0 10%;
+        }
+    
+        .text_decouvration{
+            font-size: 150%;
+            padding: 0 9% 0 9%;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+    
+        #bouton{
+            border-radius: 40px;
+            width: 50%;
+            font-size: 135%;
+            margin-bottom: -2.5%;
+        }
+    
+        .position_bouton{
+            padding-bottom: 0;
+        }
+        /*fin section exploration*/
+    
+        /*section fonctionnement*/
+        .titre_categorie{
+            font-size: 235%;
+            text-align: center;
+        }
+    
+        .ensemble_carte_fonctionnement{
+            flex-direction: row;
+            margin-top: 5%;
+        }
+    
+        #carte_fonctionnement_centrale{
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+    
+        .picto_fonctionnement{
+            font-size: 160%;
+            padding-left: 0;
+        }
+    
+        .text_fonctionnement{
+            padding: 0;
+            font-size: 125%;
+        }
+    
+        .numerotation{
+            width: 35px;
+            height: 25px;
+            font-size: 135%;
+        }
+        /*fin section fonctionnement*/
+
+        /*section restaurant*/
+        .img_restaurant{
+            height: 250px;
+        }
+
+        .footer_card{
+            font-size: 100%;
+        }
+        .text_restaurant{
+            font-size: 140%;
+        }
+
+        .fa-heart::before{
+            font-size: 40px;
+        }
+
+        .fa-heart::after{
+            right: 7.55%;
+            font-size: 40px;
+        }
+
+        .nouveauté{
+            font-size: 120%;
+            margin-left: 75%;
+        }
+        /*fin section restaurant*/
+        /*fin main*/
+
+        /*footer*/
+        .img_logo_footer{
+            width: 35%;
+        }
+
+        .text_footer{
+            font-size: 150%;
+        }
+        /*fin footer*/
+}

@@ -353,13 +353,12 @@ footer{
         display: flex;
     }
 
-    .conteneur_carte_plat_solo{
-        display: flex;
-        justify-content: center;
+    .picto_check{
+        margin-top: -10%;
     }
 
-    .picto_check{
-        margin-top: -95px;
+    .carte_plat:hover .picto_check{
+        font-size: 150%;
     }
 
     .prix{

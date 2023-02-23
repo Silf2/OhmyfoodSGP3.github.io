@@ -350,15 +350,15 @@ footer{
 
     .conteneur_carte_plat{
         display: flex;
-        justify-content: space-between;
+    }
+
+    .conteneur_carte_plat_solo{
+        display: flex;
+        justify-content: center;
     }
 
     .picto_check{
-        margin-top: -10%;
-    }
-
-    .carte_plat:hover .picto_check{
-        font-size: 150%;
+        margin-top: -95px;
     }
 
     .prix{

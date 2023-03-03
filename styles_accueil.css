@@ -324,17 +324,21 @@ footer{
     padding: 5%;
 }
 
-.img_logo_footer{
-    filter: brightness(17);
-    width: 50%;
-    padding-bottom: 3%;
+#logo_footer{
+    font-family: Shrikhand;
+    color: white;
+    font-weight: 100;
 }
 
-.text_footer{
+.conteneur_text_footer{
     display: flex;
     flex-direction: column;
     color: white;
     line-height: 150%;
+}
+
+.text_footer{
+    color: white;
 }
 
 .text_picto_foot{
@@ -482,13 +486,14 @@ footer{
     /*fin main*/
 
     /*footer*/
-    .img_logo_footer{
-        display: flex;
-        margin: auto;
-        width: 35%;
+    #logo_footer{
+        font-size: 400%;
+        text-align: center;
+        margin-top: -3%;
+        padding-bottom: 2%;
     }
 
-    .text_footer{
+    .conteneur_text_footer{
         flex-direction: row;
         justify-content: space-between;
         font-size: 200%;
@@ -613,11 +618,12 @@ footer{
         /*fin main*/
 
         /*footer*/
-        .img_logo_footer{
-            width: 35%;
+        #logo_footer{
+            font-size: 220%;
+            margin-top: -2%;
         }
 
-        .text_footer{
+        .conteneur_text_footer{
             font-size: 150%;
         }
         /*fin footer*/

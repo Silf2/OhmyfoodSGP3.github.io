@@ -1,26 +1,21 @@
 *{
-    font-family: 'roboto', sans-serif;
+    font-family: 'roboto','Shrikhand', sans-serif;
     margin:0;
     text-decoration: none;
-    font-size: 110%;
-}
-
-p{
-    font-weight: 200;
     font-size: 100%;
 }
 
-h3{
-    font-size: 120%;
+p{
+    font-weight: 300;
+    font-size: 90%;
 }
-
 
 /*header*/
 .bouton_precedent{
     color: black;
     position: absolute;
-    font-size: 190%;
-    padding-top: 4%;
+    font-size: 140%;
+    padding-top: 3%;
     padding-left: 5%;
 }
 
@@ -41,7 +36,7 @@ h3{
 /*section image d'illustration*/
 .img_restaurant{
     width: 100%;
-    height: 450px;
+    height: 250px;
     object-fit: cover;
 }
 /*fin section image d'illustration*/
@@ -70,7 +65,8 @@ h3{
 
 .nom_restaurant{
     font-family: Shrikhand;
-    font-size: 210%;
+    font-size: 160%;
+    font-weight: 500;
 }
 
 .fa-heart::before {
@@ -78,7 +74,7 @@ h3{
     background-clip: border-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 50px;
+    font-size: 30px;
 }
 
 .fa-heart::after{
@@ -91,7 +87,7 @@ h3{
     font-weight: bold;
     height: 0%;
     right: 5%;
-    font-size: 50px;
+    font-size: 30px;
     position: absolute;
     transition: all 2s;
 }
@@ -136,28 +132,28 @@ h3{
 }
 .boite_categorie{
     padding-top: 7%;
-    padding-bottom: 7%;
+    padding-bottom: 10%;
 }
 
 .nom_catégorie{
-    font-weight: 55;
+    font-weight: 300;
     padding-bottom: 2%;
-    border-bottom: 2px solid #00a77e;
+    border-bottom: 2px solid #99E2D0;
     position: absolute;
     margin-top: -2%;
-    font-size: 140%;
     left: 5%;
     right: 88%;
 }
 
 .carte_plat{
     display: flex;
-    background-color:white;
+    background-color: white;
     border-radius: 15px;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
     width: 100%;
     margin-top: 2%;
     position: relative;
+    overflow: hidden;
 }
 
 .carte_plat::before{
@@ -169,13 +165,12 @@ h3{
     background: #99E2D0;
     border-radius: 0 15px 15px 0;
     transition: all .5s;
-    visibility: hidden;
+    overflow: hidden;
 }
 
 .carte_plat:hover::before{
     left: 85%;
-    width: 15%;
-    visibility: visible;
+    width: 15.5%;
 }
 
 .carte_plat:hover .prix{
@@ -195,40 +190,49 @@ h3{
     position: absolute;
     left: 88%;
     transition: all .5s;
-    font-size: 100%;
+    font-size: 85%;
     background-color: white;
+
 }
 
-.picto_check{
-    margin-top: -80px;
-    position: absolute;
-    color: white;
-    margin-left: 98%;
-    visibility: hidden;
-    font-size: 200%;
-    transition: all .5s;
-    font-size: 0%;
-}
-
-.carte_plat:hover .picto_check{
-    margin-left: 86%;
-    visibility: visible;
-    transform: rotate(360deg);
-    font-size: 200%;
-}
-
-.text_long{
-    position: absolute;
-    left: 82%;
-    visibility: hidden;
-    transition: all .5s;
+.carte_plat:hover .prix{
+    left: 77%;
+    z-index: 1;
 }
 
 .carte_plat:hover .text_long{
-    visibility: visible;
-    left: 71%;
-    background-color: white;
+    padding-right: 5%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
+
+.picto_check{
+    margin-top: -30px;
+    position: absolute;
+    color: white;
+    margin-left: 98%;
+    display: none;
+    font-size: 150%;
+    transition: all 0.5s;
+}
+
+.carte_plat:hover .picto_check{
+    display: block;
+    animation: move-in .5s forwards, rotate-check 1s .1s forwards;
+}
+
+@keyframes move-in {
+    0% { margin-left: 100%; opacity: 0; }
+    100% { margin-left: 87%; opacity: 1; }
+}
+
+@keyframes rotate-check {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+}
+
 
 /*fin section entrée/plats/desserts*/
 
@@ -238,7 +242,7 @@ h3{
     border-radius: 100px;
     border: 0;
     width: 65%;
-    font-size: 200%;
+    font-size: 150%;
     padding: 4%;
     color: white;
     background: linear-gradient(#FF79DA, #9356DC);
@@ -258,18 +262,22 @@ footer{
     padding: 5%;
 }
 
-.img_logo_footer{
-    filter: brightness(17);
-    width: 30%;
-    padding-bottom: 3%;
+#logo_footer{
+    font-family: Shrikhand;
+    color: white;
+    font-weight: 100;
+    font-size: 140%;
 }
 
-.text_footer{
+.conteneur_text_footer{
     display: flex;
     flex-direction: column;
     color: white;
     line-height: 150%;
-    font-size: 150%;
+}
+
+.text_footer{
+    color: white;
 }
 
 .text_picto_foot{
@@ -287,17 +295,9 @@ footer{
 /*disposition desktop*/
 @media screen and (min-width:992px){
 
-    h3{
-        font-size: 83%;
-    }
-
-    p{
-        font-size: 70%;
-    }
-
     /*header*/
     .img_logo{
-        width: 35%;
+        width: 30%;
     }
 
     .bouton_precedent{
@@ -319,6 +319,7 @@ footer{
     /*section menus*/
     .menus{
         margin-top: -2%;
+        padding-top: 3%;
     }
 
     /*en-tete menus*/
@@ -336,8 +337,13 @@ footer{
     /*fin en-tete menus*/
 
     /*section entrée plat et dessert*/
+    .boite_categorie{
+        padding-bottom: 1%;
+    }
+
     .nom_catégorie{
         font-size: 200%;
+        padding-bottom: 1%;
     }
 
     .carte_plat{
@@ -354,19 +360,19 @@ footer{
     }
 
     .picto_check{
-        margin-top: -10%;
+        margin-top: -48px;
     }
 
     .carte_plat:hover .picto_check{
         font-size: 150%;
     }
 
-    .prix{
-        font-size: 70%;
-    }
-
     .text_long{
-        font-size: 73%;
+        font-size: 100%;
+    }
+    
+    .carte_plat:hover .text_long{
+        text-overflow: clip;
     }
     /*fin section entree plat desser*/
 
@@ -380,19 +386,99 @@ footer{
     }
 
     /*footer*/
-    .img_logo_footer{
-        display: flex;
-        margin: auto;
+    #logo_footer{
+        font-size: 400%;
+        text-align: center;
+        margin-top: -3%;
+        padding-bottom: 2%;
     }
-    
-    .text_footer{
+
+    .conteneur_text_footer{
         flex-direction: row;
         justify-content: space-between;
         font-size: 200%;
     }
-    
+
     .text_picto_foot{
         text-align: unset;
     }
     /*fin footer*/
+}
+
+/*disposition tablette*/
+@media screen and (min-width:768px) and (max-width:992px){
+
+    h3{
+        font-size: 160%;
+    }
+    p{
+        font-size: 150%;
+    }
+
+    /*header*/
+    .bouton_precedent{
+        font-size: 220%;
+    }
+
+    .img_logo{
+        width: 40%;
+    }
+    /*fin header*/
+
+    /*main*/
+    /*section image illustration*/
+    .img_restaurant{
+        height: 350px;
+    }
+    /*fin section image illustration*/
+
+    /*section menu*/
+    /*section entête menu*/
+    .nom_restaurant{
+        font-size: 250%;
+    }
+
+    .fa-heart::before{
+        font-size: 45px;
+    }
+
+    .fa-heart::after{
+        font-size: 45px;
+    }
+    /*fin section entête menu*/
+    
+    /*section entrée plat et dessert*/
+    .boite_categorie{
+        margin-bottom: -3%;
+    }
+
+    .nom_catégorie{
+        font-size: 180%;
+    }
+
+    .prix{
+        font-size: 150%;
+    }
+
+    .carte_plat:hover .text_long{
+        text-overflow: clip;
+    }
+
+    .picto_check{
+        margin-top: -54px;
+        font-size: 275%;
+    }
+    /*fin section entrée plat et dessert*/
+
+    /*footer*/
+    #logo_footer{
+        font-size: 220%;
+        margin-top: -2%;
+    }
+
+    .conteneur_text_footer{
+        line-height: 200%;
+    }
+    /*fin footer*/
+
 }
